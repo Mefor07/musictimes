@@ -13,13 +13,17 @@
             <div class="flex">
                 <img
                     class="hidden w-48 mr-6 md:block"
-                    src={{asset('images/music-album.png')}}
+                    src={{$album['url']}}
                     alt=""
                 />
                 <div>
                     <h3 class="text-2xl">
                         <a href="/listings/{{$album['id']}}">{{$album['title']}}</a>
                     </h3>
+
+                    <h4 class="text-1xl">
+                        <a href="/listings/{{$album['id']}}">{{$album['url']}}</a>
+                    </h4>
                     
                 </div>
             </div>

@@ -31,3 +31,31 @@ Route::get('/zeroseven', function () {
 
     //return count($response->json());
 });
+
+
+Route::get('/zeroseven/premium', function () {
+    $response = Http::get('https://jsonplaceholder.typicode.com/photos');
+    //return view('albums');//$response;
+
+    return view('premium_albums', [
+        'heading' => 'Latest Listings',
+        'albums'=> $response->json()
+    ]);
+    
+
+    //return count($response->json());
+});
+
+
+Route::get('/zeroseven/detail/{title}/{url}', function ($title,$url) {
+    
+    return $title;
+
+    // return view('premium_albums', [
+    //     'heading' => 'Latest Listings',
+    //     'albums'=> $response->json()
+    // ]);
+    
+
+    //return count($response->json());
+});

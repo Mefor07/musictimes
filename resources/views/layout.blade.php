@@ -24,23 +24,32 @@
                 },
             };
         </script>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>Music Times | Find Cool Music Albums</title>
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
-            <a href="/"
-                ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
-            /></a>
+            <div class="flex">
+                <div>
+                    <h3 class="text-2xl">
+                        <a href=""></a>
+                    </h3>
+                    
+                </div>
+                <a href="/"
+                    ><img class="w-24 p-6" src="{{asset('images/music-album.png')}}" alt="" class="logo"
+                /></a>
+            </div>
+            
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
-                        ><i class="fa-solid fa-user-plus"></i> Register</a
+                    <a href="/zeroseven/premium" class="hover:text-laravel"
+                        ><i class="fa-solid fa-podcast"></i> See album with Images</a
                     >
                 </li>
                 <li>
                     <a href="login.html" class="hover:text-laravel"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a
+                        ><i class="fa-solid fa-phone"></i>
+                        Contact Us</a
                     >
                 </li>
             </ul>
