@@ -42,12 +42,12 @@
             
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
-                    <a href="/zeroseven/premium" class="hover:text-laravel"
+                    <a href="/zeroseven/premium" class="hover:text-slate-500"
                         ><i class="fa-solid fa-podcast"></i> See album with Images</a
                     >
                 </li>
                 <li>
-                    <a href="login.html" class="hover:text-laravel"
+                    <a href="https://www.zeroseven.de/kontakt" class="hover:text-slate-500"
                         ><i class="fa-solid fa-phone"></i>
                         Contact Us</a
                     >
