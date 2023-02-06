@@ -35,7 +35,7 @@
                     </h3>
                     
                 </div>
-                <a href="/zeroseven"
+                <a href="/albums"
                     ><img class="w-24 p-6" src="{{asset('images/music-album.png')}}" alt="" class="logo"
                 /></a>
             </div>

@@ -18,61 +18,59 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/zeroseven', function () {
+/*
+route to list all albums
+*/
+Route::get('/albums', function () {
     $response = Http::get('https://jsonplaceholder.typicode.com/albums');
-    //return view('albums');//$response;
-
+   
     return view('albums', [
         'heading' => 'Latest Listings',
         'albums'=> $response->json()
     ]);
     
-
-    //return count($response->json());
 });
 
 
+/*
+* Route to display list of albums per  album id
+ */
+Route::get('/albums/{id}/photos/{title}', function ($id, $title) {
+    
+    $response = Http::get('https://jsonplaceholder.typicode.com/albums/'.$id.'/photos');
+
+    return view('detail', [
+        'heading' => $title,
+        'albums'=> $response->json()
+    ]);
+    
+});
+
+
+/*
+route to list all premium albums
+*/
+
 Route::get('/zeroseven/premium', function () {
     $response = Http::get('https://jsonplaceholder.typicode.com/photos');
-    //return view('albums');//$response;
+
 
     return view('premium_albums', [
         'heading' => 'Latest Listings',
         'albums'=> $response->json()
     ]);
     
-
-    //return count($response->json());
 });
 
 
-
-
-Route::get('/zeroseven/detail/{id}', function ($id) {
-    
-    $response = Http::get('https://jsonplaceholder.typicode.com/albums/'.$id);
-    
-
-    return view('detail', [
-        'heading' => 'Latest Listings',
-        'album'=> $response->json()
-    ]);
-
-   
-    
-});
 
 
 Route::get('/zeroseven/premium/{id}', function ($id) {
     $response = Http::get('https://jsonplaceholder.typicode.com/photos/'.$id);
-    //return view('albums');//$response;
 
     return view('premium_detail', [
         'heading' => 'Latest Listings',
         'album'=> $response->json()
     ]);
     
-
-    //return count($response->json());
 });
