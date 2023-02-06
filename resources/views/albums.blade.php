@@ -42,7 +42,7 @@ class="relative h-72 bg-slate-900 flex flex-col justify-center align-center text
                 />
                 <div>
                     <h3 class="text-2xl">
-                        <a href="/listings/{{$album['id']}}">{{$album['title']}}</a>
+                        <a href="/zeroseven/detail/{{$album['id']}}">{{$album['title']}}</a>
                     </h3>
                     
                 </div>
