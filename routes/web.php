@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,14 @@ Route::get('/', function () {
 
 
 Route::get('/zeroseven', function () {
-    return "Hello Zero Seven";
+    $response = Http::get('https://jsonplaceholder.typicode.com/albums');
+    //return view('albums');//$response;
+
+    return view('albums', [
+        'heading' => 'Latest Listings',
+        'albums'=> $response->json()
+    ]);
+    
+
+    //return count($response->json());
 });
