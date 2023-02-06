@@ -62,3 +62,17 @@ Route::get('/zeroseven/detail/{id}', function ($id) {
    
     
 });
+
+
+Route::get('/zeroseven/premium/{id}', function ($id) {
+    $response = Http::get('https://jsonplaceholder.typicode.com/photos/'.$id);
+    //return view('albums');//$response;
+
+    return view('premium_detail', [
+        'heading' => 'Latest Listings',
+        'album'=> $response->json()
+    ]);
+    
+
+    //return count($response->json());
+});
