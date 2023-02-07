@@ -7,6 +7,11 @@ class Helper{
         return 'https://jsonplaceholder.typicode.com/albums';
     }
 
+
+    public static function getBasePhotoUrl(){
+        return 'https://jsonplaceholder.typicode.com/photos';
+    }
+
 }
 
 ?>

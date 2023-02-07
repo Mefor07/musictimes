@@ -10,7 +10,6 @@ class AlbumController extends Controller
 {
     //list all albums
     public function index(){
-        
         //retrieve base url via the use of helper class
         /*'https://jsonplaceholder.typicode.com/albums'*/
         $baseUrl = Helper::getBaseUrl();
@@ -35,8 +34,8 @@ class AlbumController extends Controller
 
 
     public function premium(){
-
-        $response = Http::get('https://jsonplaceholder.typicode.com/photos');
+        $baseUrl = Helper::getBasePhotoUrl();
+        $response = Http::get($baseUrl);
 
         return view('premium_albums', [
             'heading' => 'Latest Listings',
