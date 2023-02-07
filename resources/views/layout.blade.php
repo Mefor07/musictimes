@@ -42,7 +42,7 @@
             
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
-                    <a href="/zeroseven/premium" class="hover:text-slate-500"
+                    <a href="/albums/premium" class="hover:text-slate-500"
                         ><i class="fa-solid fa-podcast"></i> See album with Images</a
                     >
                 </li>

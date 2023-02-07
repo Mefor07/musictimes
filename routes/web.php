@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Http;
+//use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\AlbumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,50 +22,24 @@ Route::get('/', function () {
 /*
 route to list all albums
 */
-Route::get('/albums', function () {
-    $response = Http::get('https://jsonplaceholder.typicode.com/albums');
-   
-    return view('albums', [
-        'heading' => 'Latest Listings',
-        'albums'=> $response->json()
-    ]);
-    
-});
+Route::get('/albums', [AlbumController::class, 'index']);
 
 
 /*
-* Route to display list of albums per  album id
+* Route to display list of albums per  album id(detail)
  */
-Route::get('/albums/{id}/photos/{title}', function ($id, $title) {
-    
-    $response = Http::get('https://jsonplaceholder.typicode.com/albums/'.$id.'/photos');
-
-    return view('detail', [
-        'heading' => $title,
-        'albums'=> $response->json()
-    ]);
-    
-});
+Route::get('/albums/{id}/photos/{title}', [AlbumController::class, 'show']);
 
 
 /*
 route to list all premium albums
 */
 
-Route::get('/zeroseven/premium', function () {
-    $response = Http::get('https://jsonplaceholder.typicode.com/photos');
-
-
-    return view('premium_albums', [
-        'heading' => 'Latest Listings',
-        'albums'=> $response->json()
-    ]);
-    
-});
+Route::get('/albums/premium', [AlbumController::class, 'premium']);
 
 
 
-
+/*
 Route::get('/zeroseven/premium/{id}', function ($id) {
     $response = Http::get('https://jsonplaceholder.typicode.com/photos/'.$id);
 
@@ -74,3 +49,4 @@ Route::get('/zeroseven/premium/{id}', function ($id) {
     ]);
     
 });
+*/

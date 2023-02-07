@@ -18,7 +18,8 @@
                 />
                 <div>
                     <h3 class="text-2xl">
-                        <a href="/zeroseven/premium/{{$album['id']}}">{{$album['title']}}</a>
+                        <a href="/albums/{{$album['id']}}/photos/{{$album['title']}}">{{$album['title']}}</a>
+                        <!--<a href="/zeroseven/premium/{{$album['id']}}">{{$album['title']}}</a>-->
                     </h3>
 
                     <h4 class="text-1xl">
