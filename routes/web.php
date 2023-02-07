@@ -36,17 +36,3 @@ route to list all premium albums
 */
 
 Route::get('/albums/premium', [AlbumController::class, 'premium']);
-
-
-
-/*
-Route::get('/zeroseven/premium/{id}', function ($id) {
-    $response = Http::get('https://jsonplaceholder.typicode.com/photos/'.$id);
-
-    return view('premium_detail', [
-        'heading' => 'Latest Listings',
-        'album'=> $response->json()
-    ]);
-    
-});
-*/

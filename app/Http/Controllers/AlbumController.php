@@ -10,6 +10,7 @@ class AlbumController extends Controller
 {
     //list all albums
     public function index(){
+
         //retrieve base url via the use of helper class
         $baseUrl = Helper::getBaseUrl();
         $response = Http::get($baseUrl);
@@ -29,7 +30,10 @@ class AlbumController extends Controller
         
     }
 
+    //show album details
     public function show($id, $title){
+
+        //retrieve base url via the use of helper class
         $baseUrl = Helper::getBaseUrl();
         $response = Http::get($baseUrl.'/'.$id.'/photos');
 
@@ -48,9 +52,14 @@ class AlbumController extends Controller
     }
 
 
+    //show premium albums
     public function premium(){
+
+        //retrieve base url via the use of helper class
         $baseUrl = Helper::getBasePhotoUrl();
         $response = Http::get($baseUrl);
+
+        //validate request url
         if($response->getStatusCode() !== 200){
             abort(404);
         }else{
