@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Helper;
 
 class AlbumController extends Controller
 {
     //list all albums
-
     public function index(){
+        
+        //retrieve base url via the use of helper class
+        /*'https://jsonplaceholder.typicode.com/albums'*/
+        $baseUrl = Helper::getBaseUrl();
+        $response = Http::get($baseUrl);
 
-        $response = Http::get('https://jsonplaceholder.typicode.com/albums');
        
         return view('albums', [
             'heading' => 'Latest Listings',
@@ -20,7 +24,8 @@ class AlbumController extends Controller
     }
 
     public function show($id, $title){
-        $response = Http::get('https://jsonplaceholder.typicode.com/albums/'.$id.'/photos');
+        $baseUrl = Helper::getBaseUrl();
+        $response = Http::get($baseUrl.'/'.$id.'/photos');
 
         return view('detail', [
             'heading' => $title,
@@ -30,7 +35,7 @@ class AlbumController extends Controller
 
 
     public function premium(){
-        
+
         $response = Http::get('https://jsonplaceholder.typicode.com/photos');
 
         return view('premium_albums', [
